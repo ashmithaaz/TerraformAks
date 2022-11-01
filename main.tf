@@ -1,12 +1,3 @@
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "resourcegroup1"
-    storage_account_name = "aksterraform12"
-    container_name       = "tfstatedevops"
-    key                  = "tfstatedevops.tfstate"
-  }
-}
-
 provider "azurerm" {
   version = "~>2.0"
   features {}
@@ -17,7 +8,7 @@ data "azurerm_client_config" "current" {}
 #Create Resource Group
 resource "azurerm_resource_group" "tamops" {
   name     = "tamops"
-  location = "eastus2"
+  location = "eastus"
 }
 
 #Create ACR 
